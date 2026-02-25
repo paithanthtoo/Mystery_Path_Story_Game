@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Path - Interactive Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Mystery Path</div>
+            <ul id="main-menu">
+                <li><button onclick="showSection('home')">Home</button></li>
+                <li><button onclick="handleGameNav()">Game</button></li>
+                <li><button onclick="showSection('about')">About</button></li>
+                <li><button onclick="showSection('help')">Help</button></li>
+            </ul>
+            
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="active-section">
+            <div class="hero">
+                <h1>Welcome to Mystery Path</h1>
+                <p>An interactive, browser-based hypertext adventure.</p>
+                <button id="start-btn" class="primary-btn" onclick="startGame()">Start New Game</button>
+                <button id="resume-btn" class="secondary-btn" style="display:none;" onclick="loadGame()">Resume Journey</button>
+            </div>
+        </section>
+
+        <section id="game" class="hidden-section">
+            <div class="game-container">
+                <div id="story-text" class="story-box">
+                    </div>
+                <div id="choices-container" class="choices-box">
+                    </div>
+            </div>
+        </section>
+
+        <section id="about" class="hidden-section">
+            <h2>About Mystery Path</h2>
+            <p>This project is an interactive story game developed for the SET08101 Web Technologies module.</p>
+            <p>It demonstrates DOM manipulation, local storage, and responsive design without external frameworks.</p>
+        </section>
+
+        <section id="help" class="hidden-section">
+            <h2>How to Play</h2>
+            <ul>
+                <li>Read the story text carefully.</li>
+                <li>Select a choice to determine the narrative direction.</li>
+                <li>Your progress is saved automatically.</li>
+                <li>Explore different paths to find all endings!</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pai Thant Htoo - Web Technologies Coursework</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <audio id="click-sound" src="click.mp3"></audio>
+    <audio id="typing-sound" src="typing-click.mp3"></audio>     
+    <audio id="bg-music" src="mystery-loop.mp3" loop></audio>
+</body>
+</html>
